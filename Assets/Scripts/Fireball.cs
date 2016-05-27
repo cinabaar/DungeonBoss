@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Fireball : MonoBehaviour {
 
-    public float timeAlive = 10.0f;
+    public float timeAlive = 5.0f;
     public float damage = 100.0f;
     public float speed = 1.0f;
 
@@ -17,13 +17,6 @@ public class Fireball : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        var mousePosition = Input.mousePosition;
-        mousePosition.z = 32;
-        Vector3 lookPos = Camera.main.ScreenToWorldPoint(mousePosition);
-        lookPos = lookPos - transform.position;
-        float angle = Mathf.Atan2(lookPos.y, lookPos.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        //this._fireBallBody.transform.Translate(Vector3.forward * speed);
         timeAlive = timeAlive - 0.05f;
         destroyBallIfTimeHasPassed();
     }
