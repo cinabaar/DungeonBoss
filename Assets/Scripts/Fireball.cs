@@ -8,7 +8,6 @@ public class Fireball : MonoBehaviour {
     public float speed = 1.0f;
 
     private Rigidbody2D _fireBallBody;
-    private Vector2 direction;
 
     // Use this for initialization
     void Start() {
@@ -28,10 +27,15 @@ public class Fireball : MonoBehaviour {
     }
 
     public void OnCollisionEnter2D(Collision2D collisionInfo) {
-        Destroy(gameObject);
+        if(hasHitWall(collisionInfo)) {
+            Destroy(gameObject);
+        }
     }
 
-    public void setDirection(Vector2 direction) {
-        this.direction = direction;
+    private bool hasHitWall(Collision2D collisionInfo) {
+        return collisionInfo.gameObject.name == "WallBottom" 
+            || collisionInfo.gameObject.name == "WallTop" 
+            || collisionInfo.gameObject.name == "WallRight" 
+            || collisionInfo.gameObject.name == "WallLeft";
     }
 }
