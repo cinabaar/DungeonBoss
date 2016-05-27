@@ -2,7 +2,6 @@
 
 public class FlyingMovement : MonoBehaviour
 {
-
     public float Speed = 10;
 
     private Rigidbody2D _rigidBody;
@@ -21,6 +20,5 @@ public class FlyingMovement : MonoBehaviour
         //Debug.Log(horizontal + " " + vertical);
 	    var move = new Vector2(horizontal, vertical);
 	    _rigidBody.velocity = Speed*move;
-
 	}
 }
