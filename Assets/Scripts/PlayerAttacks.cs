@@ -18,14 +18,10 @@ public class PlayerAttacks : MonoBehaviour {
             castFireball();
         }
     }
-
     private void castFireball() {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        float distance;
-        if (clickPlane.Raycast(ray, out distance)) {
-            Vector3 direction = (ray.GetPoint(distance) - _rigidBody.transform.position).normalized;
-            GameObject newFireball = (GameObject)Instantiate(fireballAttackPrefab, this.transform.position, Quaternion.identity);
-            newFireball.GetComponent<Rigidbody2D>().AddForce(direction * 20, ForceMode2D.Impulse);
-        }
+		var target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		var direction = (target - transform.position).normalized;
+		GameObject newFireball = (GameObject)Instantiate(fireballAttackPrefab, this.transform.position, Quaternion.identity);
+		newFireball.GetComponent<Rigidbody2D>().AddForce(direction * 20, ForceMode2D.Impulse);
     }
 }
