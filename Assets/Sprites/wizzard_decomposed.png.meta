@@ -1,16 +1,16 @@
 fileFormatVersion: 2
 guid: 32f700c6c6fca437c8d2b227d9a4644f
-timeCreated: 1465323738
+timeCreated: 1465324469
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: head
-    21300002: hand_left
-    21300004: hand_right
-    21300006: leg_left
-    21300008: leg_right
-    21300010: belly
-    21300012: wand
+    21300000: wizzard_head
+    21300002: wizzard_hand_left
+    21300004: wizzard_hand_right
+    21300006: wizzard_leg_left
+    21300008: wizzard_leg_right
+    21300010: wizzard_belly
+    21300012: wizzard_wand
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -58,36 +58,37 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: head
+    - name: wizzard_head
       rect:
         serializedVersion: 2
         x: 0
-        y: 275
+        y: 276
         width: 273
         height: 335
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -99.5, y: 167.5}
-        - {x: -136.5, y: 111.5}
-        - {x: -136.5, y: 80.5}
-        - {x: -129.5, y: 77.5}
+      - - {x: 98.5, y: -62.5}
+        - {x: 136.5, y: -6.5}
+        - {x: 136.5, y: 7.5}
+        - {x: 1.5, y: 167.5}
+        - {x: -91.5, y: 167.5}
+        - {x: -118.5, y: 136.5}
+        - {x: -133.5, y: 87.5}
+        - {x: -128.5, y: 78.5}
+        - {x: -125.5, y: 79.5}
         - {x: -102.5, y: 94.5}
-        - {x: -136.5, y: 27.5}
-        - {x: -136.5, y: -6.5}
-        - {x: -115.5, y: -51.5}
-        - {x: -106.5, y: -84.5}
-        - {x: -91.5, y: -123.5}
-        - {x: -73.5, y: -159.5}
-        - {x: -55.5, y: -167.5}
-        - {x: 57.5, y: -167.5}
-        - {x: 124.5, y: -116.5}
-        - {x: 136.5, y: -12.5}
-        - {x: 136.5, y: 3.5}
-        - {x: -4.5, y: 167.5}
+        - {x: -93.5, y: 101.5}
+        - {x: -136.5, y: 24.5}
+        - {x: -136.5, y: -12.5}
+        - {x: -79.5, y: -167.5}
+        - {x: 92.5, y: -167.5}
+        - {x: 136.5, y: -123.5}
+        - {x: 136.5, y: -120.5}
+        - {x: 106.5, y: -68.5}
       tessellationDetail: 0
-    - name: hand_left
+    - name: wizzard_hand_left
       rect:
         serializedVersion: 2
         x: 294
@@ -108,7 +109,7 @@ TextureImporter:
         - {x: 71, y: -39}
         - {x: 45, y: 66}
       tessellationDetail: 0
-    - name: hand_right
+    - name: wizzard_hand_right
       rect:
         serializedVersion: 2
         x: 455
@@ -129,24 +130,25 @@ TextureImporter:
         - {x: 82.5, y: -36.5}
         - {x: 82.5, y: 4.5}
       tessellationDetail: 0
-    - name: leg_left
+    - name: wizzard_leg_left
       rect:
         serializedVersion: 2
         x: 32
-        y: 195
+        y: 194
         width: 86
         height: 66
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 43, y: -33}
-        - {x: 43, y: -23}
-        - {x: 9, y: 33}
+      - - {x: -12, y: 33}
         - {x: -43, y: 33}
         - {x: -43, y: -33}
+        - {x: 43, y: -33}
+        - {x: 43, y: -28}
+        - {x: 33, y: -20}
       tessellationDetail: 0
-    - name: leg_right
+    - name: wizzard_leg_right
       rect:
         serializedVersion: 2
         x: 144
@@ -167,7 +169,7 @@ TextureImporter:
         - {x: 43.5, y: -26.5}
         - {x: -12.5, y: 33.5}
       tessellationDetail: 0
-    - name: belly
+    - name: wizzard_belly
       rect:
         serializedVersion: 2
         x: 253
@@ -186,7 +188,7 @@ TextureImporter:
         - {x: 189.5, y: -169.5}
         - {x: 49.5, y: 178.5}
       tessellationDetail: 0
-    - name: wand
+    - name: wizzard_wand
       rect:
         serializedVersion: 2
         x: 91

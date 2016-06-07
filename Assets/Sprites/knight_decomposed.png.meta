@@ -1,16 +1,16 @@
 fileFormatVersion: 2
 guid: 3697ce332da5c444e822b64a95701e96
-timeCreated: 1465323427
+timeCreated: 1465324394
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: hand_left
-    21300002: hand_right
-    21300004: head
-    21300006: sword
-    21300008: belly
-    21300010: leg_left
-    21300012: leg_right
+    21300000: knight_hand_left
+    21300002: knight_hand_right
+    21300004: knight_head
+    21300006: knight_sword
+    21300008: knight_belly
+    21300010: knight_leg_left
+    21300012: knight_leg_right
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -58,26 +58,28 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: hand_left
+    - name: knight_hand_left
       rect:
         serializedVersion: 2
-        x: 20
-        y: 170
+        x: 22
+        y: 169
         width: 49
         height: 101
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -19.5, y: 50.5}
-        - {x: -24.5, y: 33.5}
-        - {x: -24.5, y: -50.5}
-        - {x: 13.5, y: -50.5}
-        - {x: 18.5, y: -45.5}
-        - {x: 24.5, y: -18.5}
-        - {x: 24.5, y: 50.5}
+      - - {x: 21.5, y: 50.5}
+        - {x: -13.5, y: 50.5}
+        - {x: -24.5, y: 38.5}
+        - {x: -24.5, y: -45.5}
+        - {x: -16.5, y: -50.5}
+        - {x: 6.5, y: -50.5}
+        - {x: 14.5, y: -40.5}
+        - {x: 24.5, y: -12.5}
+        - {x: 24.5, y: 44.5}
       tessellationDetail: 0
-    - name: hand_right
+    - name: knight_hand_right
       rect:
         serializedVersion: 2
         x: 89
@@ -96,7 +98,7 @@ TextureImporter:
         - {x: 41, y: 23}
         - {x: 1, y: 45}
       tessellationDetail: 0
-    - name: head
+    - name: knight_head
       rect:
         serializedVersion: 2
         x: 182
@@ -124,10 +126,10 @@ TextureImporter:
         - {x: 75.5, y: 36.5}
         - {x: 15.5, y: 96.5}
       tessellationDetail: 0
-    - name: sword
+    - name: knight_sword
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
         width: 65
         height: 152
@@ -135,14 +137,16 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -2.5, y: 76}
-        - {x: -32.5, y: 27}
-        - {x: -32.5, y: -75}
-        - {x: -31.5, y: -76}
-        - {x: 32.5, y: -76}
-        - {x: 32.5, y: 76}
+      - - {x: -4.5, y: 76}
+        - {x: -32.5, y: 14}
+        - {x: -32.5, y: -71}
+        - {x: -13.5, y: -76}
+        - {x: 27.5, y: -76}
+        - {x: 32.5, y: 20}
+        - {x: 32.5, y: 53}
+        - {x: 20.5, y: 76}
       tessellationDetail: 0
-    - name: belly
+    - name: knight_belly
       rect:
         serializedVersion: 2
         x: 107
@@ -158,26 +162,25 @@ TextureImporter:
         - {x: 41, y: 39}
         - {x: -41, y: 39}
       tessellationDetail: 0
-    - name: leg_left
+    - name: knight_leg_left
       rect:
         serializedVersion: 2
-        x: 215
-        y: 64
+        x: 217
+        y: 66
         width: 64
         height: 67
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -32, y: -21.5}
-        - {x: -29, y: -33.5}
-        - {x: 32, y: -33.5}
-        - {x: 32, y: -7.5}
-        - {x: 31, y: 33.5}
-        - {x: -24, y: 33.5}
-        - {x: -32, y: -5.5}
+      - - {x: -25, y: 31.5}
+        - {x: -32, y: 27.5}
+        - {x: -32, y: -33.5}
+        - {x: 28, y: -33.5}
+        - {x: 28, y: 26.5}
+        - {x: 27, y: 31.5}
       tessellationDetail: 0
-    - name: leg_right
+    - name: knight_leg_right
       rect:
         serializedVersion: 2
         x: 291
