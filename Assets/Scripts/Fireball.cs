@@ -22,20 +22,19 @@ public class Fireball : MonoBehaviour {
 
     private void destroyBallIfTimeHasPassed() {
         if (timeAlive <= 0.0f) {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
-
-    public void OnCollisionEnter2D(Collision2D collisionInfo) {
-        if(hasHitWall(collisionInfo)) {
-            Destroy(gameObject);
+   
+    public void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.name != "Joe") {
+            Destroy(this.gameObject);
+            if(other.gameObject.name == "Mage") {
+                //TODO: implement damage against Mage
+            }
+            else if(other.gameObject.name == "Paladin") {
+                //ToDO: implement damage against Paladin
+            }
         }
-    }
-
-    private bool hasHitWall(Collision2D collisionInfo) {
-        return collisionInfo.gameObject.name == "WallBottom" 
-            || collisionInfo.gameObject.name == "WallTop" 
-            || collisionInfo.gameObject.name == "WallRight" 
-            || collisionInfo.gameObject.name == "WallLeft";
     }
 }
