@@ -133,6 +133,7 @@ GameObject:
   - 114: {fileID: 114000010425623670}
   - 50: {fileID: 50000012177882498}
   - 114: {fileID: 114000011216465062}
+  - 95: {fileID: 95000010350144568}
   m_Layer: 0
   m_Name: Paladin
   m_TagString: Untagged
@@ -264,13 +265,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013007970284}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7, y: 0.31, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.10254982, w: 0.9947279}
+  m_LocalPosition: {x: 0.79, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4000013500933512}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 351.38788}
 --- !u!4 &4000013500933512
 Transform:
   m_ObjectHideFlags: 1
@@ -342,6 +343,23 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!95 &95000010350144568
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013269484896}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 43fa5c2d2c5a64ed5bc3c5e477653338, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114000010425623670
 MonoBehaviour:
   m_ObjectHideFlags: 1
