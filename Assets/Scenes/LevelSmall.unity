@@ -458,6 +458,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010425623670, guid: 4e10db5ff58194d44a115b4f60ca5d13,
+        type: 2}
+      propertyPath: Health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010425623670, guid: 4e10db5ff58194d44a115b4f60ca5d13,
+        type: 2}
+      propertyPath: SpellResistance
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e10db5ff58194d44a115b4f60ca5d13, type: 2}
   m_IsPrefabParent: 0

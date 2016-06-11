@@ -8,4 +8,9 @@ class EnemyStats : MonoBehaviour
 {
     public float Strength;
     public float Health;
+    public float SpellResistance;
+
+    public void takeDamage(float amount) {
+        this.Health = this.Health - (amount - this.SpellResistance);
+    }
 }

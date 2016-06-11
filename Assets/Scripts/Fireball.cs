@@ -4,7 +4,7 @@ using System.Collections;
 public class Fireball : MonoBehaviour {
 
     public float timeAlive = 5.0f;
-    public float damage = 100.0f;
+    public float damage = 10.0f;
     public float speed = 1.0f;
 
     private Rigidbody2D _fireBallBody;
@@ -29,12 +29,13 @@ public class Fireball : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.name != "Joe") {
             Destroy(this.gameObject);
-            if(other.gameObject.name == "Mage") {
-                //TODO: implement damage against Mage
-            }
-            else if(other.gameObject.name == "Paladin") {
-                //ToDO: implement damage against Paladin
+            if(hasHitEnemy(other)) {
+                other.gameObject.GetComponent<EnemyStats>().takeDamage(this.damage);
             }
         }
+    }
+
+    private bool hasHitEnemy(Collider2D other) {
+        return other.gameObject.name == "Mage" || other.gameObject.name == "Paladin";
     }
 }
