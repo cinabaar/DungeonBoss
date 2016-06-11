@@ -428,7 +428,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010450983316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.35, y: -0.9, z: 0}
+  m_LocalPosition: {x: -0.16, y: -1.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4000012122206030}
@@ -485,14 +485,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010240177612}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.15, y: -1.8, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.0061086393, w: 0.99998134}
+  m_LocalPosition: {x: 0.92, y: -1.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000010708851898}
   m_Father: {fileID: 4000014081178684}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.7}
 --- !u!4 &4000012791102924
 Transform:
   m_ObjectHideFlags: 1
@@ -742,6 +742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireballAttackPrefab: {fileID: 1000011806146462, guid: d01bd7301535df242a61be563454ee45,
     type: 2}
+  coneOfColdPrefab: {fileID: 0}
 --- !u!114 &114000013089556674
 MonoBehaviour:
   m_ObjectHideFlags: 1
