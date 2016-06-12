@@ -36,6 +36,6 @@ public class Fireball : MonoBehaviour {
     }
 
     private bool hasHitEnemy(Collider2D other) {
-        return other.gameObject.name == "Mage" || other.gameObject.name == "Paladin";
+        return other.gameObject.name == "Wizzard" || other.gameObject.name == "Paladin";
     }
 }
