@@ -229,7 +229,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000010915754582}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 12.309687}
 --- !u!4 &4000012400439686
 Transform:
   m_ObjectHideFlags: 1
@@ -312,7 +312,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000010915754582}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 5.2799997}
 --- !u!50 &50000012177882498
 Rigidbody2D:
   serializedVersion: 2
@@ -324,7 +324,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_GravityScale: 12
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -388,8 +388,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyCollider: {fileID: 61000012900567838}
   EnemyRigidBody: {fileID: 50000012177882498}
-  JumpHeight: 40
-  WalkSpeed: 10
+  JumpHeight: 30
+  WalkSpeed: 8
   wall: {fileID: 0}
   DebugMovement: 0
 --- !u!114 &114000012062718912

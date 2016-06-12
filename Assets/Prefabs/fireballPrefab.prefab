@@ -23,7 +23,7 @@ GameObject:
   - 58: {fileID: 58000014156828406}
   - 50: {fileID: 50000014143477406}
   - 212: {fileID: 212000011297519998}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: fireballPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
