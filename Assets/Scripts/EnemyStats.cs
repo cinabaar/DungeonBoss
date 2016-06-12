@@ -12,5 +12,12 @@ class EnemyStats : MonoBehaviour
 
     public void takeDamage(float amount) {
         this.Health = this.Health - (amount - this.SpellResistance);
+        checkIfShouldDie();
+    }
+
+    private void checkIfShouldDie() {
+        if (this.Health <= 0) {
+            Destroy(this.gameObject);
+        }
     }
 }
