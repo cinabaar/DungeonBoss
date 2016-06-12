@@ -250,7 +250,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013285722966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.96, y: -1.83, z: 0.46294}
+  m_LocalPosition: {x: 4.96, y: -2.66, z: 0.46294}
   m_LocalScale: {x: 0.29, y: 0.28, z: 0.53706443}
   m_Children:
   - {fileID: 4000012354566458}
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyCollider: {fileID: 61000011947989854}
-  EnemyRigidBody: {fileID: 0}
+  EnemyRigidBody: {fileID: 50000011900964764}
   JumpHeight: 0
   WalkSpeed: 6
   wall: {fileID: 0}
