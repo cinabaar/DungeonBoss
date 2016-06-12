@@ -38,11 +38,11 @@ public class EnemyAI : MonoBehaviour
     IEnumerator RandomChangeDirection(bool isdirLeft)
     {
         EnemyMovement.Move(isdirLeft);
-        isdirLeft = !isdirLeft;
         while (true)
         {
             var wait = Random.Range(1, 3);
             yield return new WaitForSeconds(wait);
+            isdirLeft = !isdirLeft;
             EnemyMovement.Move(isdirLeft);
         }
     }

@@ -146,12 +146,16 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012189879784}
-  - 50: {fileID: 50000010970923328}
   - 61: {fileID: 61000011947989854}
-  - 95: {fileID: 95000010702029210}
   - 114: {fileID: 114000011996276392}
   - 114: {fileID: 114000010352627528}
   - 114: {fileID: 114000010712464708}
+  - 50: {fileID: 50000011900964764}
+  - 61: {fileID: 61000011995163190}
+  - 95: {fileID: 95000010488644256}
+  - 114: {fileID: 114000011963690694}
+  - 114: {fileID: 114000011693849556}
+  - 114: {fileID: 114000011211488136}
   m_Layer: 9
   m_Name: Wizzard
   m_TagString: Untagged
@@ -246,7 +250,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013285722966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.47, y: -2.39, z: 0.46294}
+  m_LocalPosition: {x: 4.96, y: -1.83, z: 0.46294}
   m_LocalScale: {x: 0.29, y: 0.28, z: 0.53706443}
   m_Children:
   - {fileID: 4000012354566458}
@@ -313,7 +317,7 @@ Transform:
   m_Father: {fileID: 4000012189879784}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50000010970923328
+--- !u!50 &50000011900964764
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
@@ -344,7 +348,21 @@ BoxCollider2D:
   m_Offset: {x: -0.06350008, y: -1.8838575}
   serializedVersion: 2
   m_Size: {x: 2.0583456, y: 5.4450607}
---- !u!95 &95000010702029210
+--- !u!61 &61000011995163190
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013285722966}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.06350008, y: -1.8838575}
+  serializedVersion: 2
+  m_Size: {x: 2.0583456, y: 5.4450607}
+--- !u!95 &95000010488644256
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -373,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyCollider: {fileID: 61000011947989854}
-  EnemyRigidBody: {fileID: 50000010970923328}
+  EnemyRigidBody: {fileID: 0}
   JumpHeight: 0
   WalkSpeed: 6
   wall: {fileID: 0}
@@ -390,6 +408,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyMovement: {fileID: 114000010352627528}
+--- !u!114 &114000011211488136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013285722966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917796ff7360e6f40a29226e516c31a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyMovement: {fileID: 114000011693849556}
+--- !u!114 &114000011693849556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013285722966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1cf2ff1a4c5c541ae286461af9b5d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyCollider: {fileID: 61000011995163190}
+  EnemyRigidBody: {fileID: 50000011900964764}
+  JumpHeight: 0
+  WalkSpeed: 6
+  wall: {fileID: 0}
+  DebugMovement: 0
+--- !u!114 &114000011963690694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013285722966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c31756700acfd43b3050bb2a597d26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Strength: 20
+  Health: 80
+  SpellResistance: 60
 --- !u!114 &114000011996276392
 MonoBehaviour:
   m_ObjectHideFlags: 1
