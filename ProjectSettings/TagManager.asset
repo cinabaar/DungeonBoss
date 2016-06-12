@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
-  - Wall
-  - 
-  - 
-  - 
-  - 
+  - Border
+  - Enemy
+  - Floor
+  - GoesThroughFloor
+  - Joe
   - 
   - 
   - 
