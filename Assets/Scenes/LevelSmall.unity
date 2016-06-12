@@ -115,6 +115,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
@@ -127,6 +128,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 1
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -229,7 +231,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010700453726, guid: 6a77b771beec08141848a4bbb492e618, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a77b771beec08141848a4bbb492e618, type: 2}
@@ -334,7 +336,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013029418846, guid: 4e10db5ff58194d44a115b4f60ca5d13, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1000013269484896, guid: 4e10db5ff58194d44a115b4f60ca5d13, type: 2}
       propertyPath: m_Name
@@ -652,3 +654,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1775305606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1775305604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c31756700acfd43b3050bb2a597d26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Strength: 20
+  Health: 80
+  SpellResistance: 60
