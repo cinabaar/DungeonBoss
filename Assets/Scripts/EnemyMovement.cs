@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
@@ -12,6 +13,7 @@ public class EnemyMovement : MonoBehaviour
 
     public bool DebugMovement = false;
 
+
     public enum MoveDirection
     {
         None = 0,
@@ -19,27 +21,41 @@ public class EnemyMovement : MonoBehaviour
         Left = 2
     }
 
+    public Action<MoveDirection> OnSideWallHitAction;
+
     private MoveDirection _currentDirection = MoveDirection.None;
     private bool _jumpLocked = false;
 
-    public bool IsGrounded
-    {
-        // get { return EnemyCollider.IsTouchingLayers(LayerMask.NameToLayer("Wall")) && !_jumpLocked; }
-        get { return EnemyCollider.IsTouching(wall) && !_jumpLocked; }
-    }
+    public bool IsGrounded { get; set; }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.ToString());
+        bool sideWallHit = false;
+        foreach (var contactPoint2D in collision.contacts)
+        {
+            if (contactPoint2D.normal.y > 0)
+            {
+                IsGrounded = true;
+            }
+            else
+            {
+                sideWallHit = true;
+            }
+        }
+        if (sideWallHit)
+        {
+            OnSideWallHitAction(_currentDirection);
+        }
     }
 
     public void Jump()
     {
-        if (IsGrounded)
+        if (IsGrounded && !_jumpLocked)
         {
             EnemyRigidBody.velocity += Vector2.up*JumpHeight;
             _jumpLocked = true;
             StartCoroutine(UnlockJump());
+            IsGrounded = false;
         }
     }
 
@@ -47,6 +63,18 @@ public class EnemyMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         _jumpLocked = false;
+    }
+
+    public void Move(bool left)
+    {
+        if (left)
+        {
+            Move(MoveDirection.Left);
+        }
+        else
+        {
+            Move(MoveDirection.Right);
+        }
     }
 
     public void Move(MoveDirection direction)
@@ -72,11 +100,14 @@ public class EnemyMovement : MonoBehaviour
         _currentDirection = direction;
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
-        if (DebugMovement)
+        if (!DebugMovement)
         {
-            Debug.Log(IsGrounded);
+            Move(_currentDirection);
+        }
+        else
+        {
             var horizontal = Input.GetAxis("Horizontal");
             var vertical = Input.GetAxis("Vertical");
             if (horizontal > 0)
@@ -95,6 +126,15 @@ public class EnemyMovement : MonoBehaviour
             {
                 Jump();
             }
+        }
+
+        if (EnemyRigidBody.velocity.y <= 0)
+        {
+            gameObject.layer = LayerMask.NameToLayer("Enemy");
+        }
+        else
+        {
+            gameObject.layer = LayerMask.NameToLayer("GoesThroughFloor");
         }
     }
 }
