@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013780652094}
-  - 212: {fileID: 212000012001440888}
   - 68: {fileID: 68000013357295236}
   - 114: {fileID: 114000011218934746}
+  - 212: {fileID: 212000013445563372}
   m_Layer: 0
   m_Name: coneOfColdPrefab
   m_TagString: Untagged
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
---- !u!212 &212000012001440888
+--- !u!212 &212000013445563372
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -98,7 +98,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 808dfbc97a47496438f2f1e48bdd4c36, type: 3}
-  m_Color: {r: 0.503, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: e5810068073b74feea17df8b7b0941f9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
