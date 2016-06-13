@@ -285,6 +285,7 @@ Prefab:
     - {fileID: 114000010658387666, guid: 6a77b771beec08141848a4bbb492e618, type: 2}
     - {fileID: 114000010434652198, guid: 6a77b771beec08141848a4bbb492e618, type: 2}
     - {fileID: 114000012108421814, guid: 6a77b771beec08141848a4bbb492e618, type: 2}
+    - {fileID: 114000012787158702, guid: 6a77b771beec08141848a4bbb492e618, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6a77b771beec08141848a4bbb492e618, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &837258007
