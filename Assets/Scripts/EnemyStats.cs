@@ -15,10 +15,22 @@ class EnemyStats : MonoBehaviour
         this.MaxHealth = this.Health;
     }
 
-
     public void takeDamage(float amount) {
-        this.Health = this.Health - (amount - this.SpellResistance);
+
+        this.Health = this.Health - calculateSpellDamageAfterFactoringInSpellResistance(amount);
+        Debug.Log("SpellResistance: " + this.SpellResistance);
         checkIfShouldDie();
+
+        GameObject go = GameObject.Find("GameMode");
+        GameMode gm = (GameMode)go.GetComponent(typeof(GameMode));
+        if (gm != null) {
+            if (this.gameObject.name == "Paladin") {
+                gm.addScoreForKilledPaladin();
+            }
+            else if (this.gameObject.name == "Wizzard") {
+                gm.addScoreForKilledMage();
+            }
+        }
     }
 
     private void checkIfShouldDie() {
@@ -29,5 +41,13 @@ class EnemyStats : MonoBehaviour
 
     void Update() {
         this.gameObject.GetComponent<HealthBar>().updateHealthBar(this.Health, this.MaxHealth);
+    }
+
+    private float calculateSpellDamageAfterFactoringInSpellResistance(float amount) {
+        if (amount - this.SpellResistance < 0) {
+            return 0.0f;
+        } else {
+            return (amount - this.SpellResistance);
+        }
     }
 }

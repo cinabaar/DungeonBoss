@@ -623,7 +623,12 @@ Prefab:
     - target: {fileID: 114000012062718912, guid: 4e10db5ff58194d44a115b4f60ca5d13,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011216465062, guid: 4e10db5ff58194d44a115b4f60ca5d13,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e10db5ff58194d44a115b4f60ca5d13, type: 2}
@@ -657,4 +662,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 1000
-  FireballDamage: 10
+  FireballDamage: 30

@@ -25,5 +25,7 @@ public class PlayerAttacks : MonoBehaviour {
         var direction = (target - transform.position).normalized;
 		GameObject newFireball = (GameObject)Instantiate(fireballAttackPrefab, this.transform.position, Quaternion.identity);
 		newFireball.GetComponent<Rigidbody2D>().AddForce(direction * 7, ForceMode2D.Impulse);
+        Fireball fb = (Fireball)newFireball.GetComponent(typeof(Fireball));
+        fb.damage = this.gameObject.GetComponent<HeroStats>().FireballDamage;
     }
 }

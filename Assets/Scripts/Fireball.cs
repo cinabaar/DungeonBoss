@@ -4,18 +4,14 @@ using System.Collections;
 public class Fireball : MonoBehaviour {
 
     public float timeAlive = 5.0f;
-    private float damage;
     public float speed = 1.0f;
-
+    public float damage;
     private Rigidbody2D _fireBallBody;
 
-    // Use this for initialization
     void Start() {
         _fireBallBody = GetComponent<Rigidbody2D>();
-        this.damage = this.GetComponent<HeroStats>().FireballDamage;
     }
 
-    // Update is called once per frame
     void Update() {
         timeAlive = timeAlive - 0.05f;
         destroyBallIfTimeHasPassed();

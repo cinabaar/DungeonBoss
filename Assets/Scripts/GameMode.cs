@@ -23,11 +23,11 @@ public class GameMode : MonoBehaviour {
     }
 	
 	void Update() {
-        MaxNumberOfPaladinsPerLevel = LevelNumber;
+       /* MaxNumberOfPaladinsPerLevel = LevelNumber;
         MaxNumberOfMagesPerLevel = LevelNumber;
         if (CurrentNumberOfMages == 0 && CurrentNumberOfPaladins == 0) {
             LevelNumber = LevelNumber + 1;
-        }
+        }*/
 
         //TODO: add spawning
 	}
