@@ -39,6 +39,8 @@ public class GameMode : MonoBehaviour {
         shouldStartNewLevel = false;
         numberOfKilledPaladinsPerLevel = 0;
         numberOfKilledWizzardsPerLevel = 0;
+        MaxNumberOfPaladinsPerLevel = 1;
+        MaxNumberOfWizzardsPerLevel = 1;
     }
 
     void OnGUI() {
@@ -86,14 +88,14 @@ public class GameMode : MonoBehaviour {
     }
 
     private void SpawnPaladin() {
-        if (CurrentNumberOfPaladins < MaxNumberOfPaladinsPerLevel) {
+        if (CurrentNumberOfPaladins < MaxNumberOfPaladinsPerLevel && numberOfKilledPaladinsPerLevel < MaxNumberOfPaladinsPerLevel) {
             GameObject newPaladin = (GameObject)Instantiate(paladinPrefab, this.transform.position, Quaternion.identity);
             CurrentNumberOfPaladins = CurrentNumberOfPaladins + 1;
         }
     }
 
     private void SpawnWizzard() {
-        if (CurrentNumberOfMages < MaxNumberOfWizzardsPerLevel) {
+        if (CurrentNumberOfMages < MaxNumberOfWizzardsPerLevel && numberOfKilledWizzardsPerLevel < MaxNumberOfWizzardsPerLevel) {
             GameObject newWizzard = (GameObject)Instantiate(wizzardPrefab, this.transform.position, Quaternion.identity);
             CurrentNumberOfMages = CurrentNumberOfMages + 1;
         }

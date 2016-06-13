@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-class EnemyStats : MonoBehaviour
-{
+class EnemyStats : MonoBehaviour {
     public float Strength;
     public float Health;
     public float SpellResistance;

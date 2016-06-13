@@ -786,7 +786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 1000
-  FireballDamage: 30
+  FireballDamage: 50
 --- !u!114 &114000013089556674
 MonoBehaviour:
   m_ObjectHideFlags: 1

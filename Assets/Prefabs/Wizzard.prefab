@@ -435,7 +435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Strength: 20
   Health: 80
-  SpellResistance: 60
+  SpellResistance: 40
 --- !u!114 &114000012260685124
 MonoBehaviour:
   m_ObjectHideFlags: 1

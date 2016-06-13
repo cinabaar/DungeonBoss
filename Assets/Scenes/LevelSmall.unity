@@ -639,4 +639,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 1000
-  FireballDamage: 30
+  FireballDamage: 50
