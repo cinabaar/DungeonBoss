@@ -87,9 +87,11 @@ GameObject:
   - 114: {fileID: 114000013089556674}
   - 114: {fileID: 114000011762682780}
   - 95: {fileID: 95000010236587970}
+  - 114: {fileID: 114000012476280496}
+  - 114: {fileID: 114000010658387666}
   m_Layer: 12
   m_Name: Joe
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -747,6 +749,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000010658387666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010630826332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f2056548a34854f92cfe3447abb40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 1000
+  FireballDamage: 10
 --- !u!114 &114000011762682780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -760,6 +775,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireballAttackPrefab: {fileID: 1000011806146462, guid: d01bd7301535df242a61be563454ee45,
     type: 2}
+--- !u!114 &114000012476280496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010630826332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47b5e3204f08554a8ad66d013f4880a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HpBarTexture: {fileID: 2800000, guid: 978ae66307dde2f41b6ad5653fd900e5, type: 3}
 --- !u!114 &114000013089556674
 MonoBehaviour:
   m_ObjectHideFlags: 1

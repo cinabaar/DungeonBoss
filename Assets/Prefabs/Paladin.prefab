@@ -135,9 +135,12 @@ GameObject:
   - 114: {fileID: 114000011216465062}
   - 95: {fileID: 95000010350144568}
   - 114: {fileID: 114000012062718912}
+  - 114: {fileID: 114000013168978526}
+  - 114: {fileID: 114000013149693938}
+  - 114: {fileID: 114000012966161168}
   m_Layer: 9
   m_Name: Paladin
-  m_TagString: Untagged
+  m_TagString: Paladin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,7 +232,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000010915754582}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 12.309687}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000012400439686
 Transform:
   m_ObjectHideFlags: 1
@@ -312,7 +315,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000010915754582}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 5.2799997}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50000012177882498
 Rigidbody2D:
   serializedVersion: 2
@@ -404,6 +407,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyMovement: {fileID: 114000011216465062}
+  Attack: {fileID: 114000013149693938}
+--- !u!114 &114000012966161168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013269484896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47b5e3204f08554a8ad66d013f4880a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HpBarTexture: {fileID: 2800000, guid: be562744045167541a5014838db2b09e, type: 3}
+--- !u!114 &114000013149693938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013269484896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ee360d9e599f942ae6287bcd0fddd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000013168978526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013269484896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47b5e3204f08554a8ad66d013f4880a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HpBarTexture: {fileID: 2800000, guid: be562744045167541a5014838db2b09e, type: 3}
 --- !u!212 &212000010073841676
 SpriteRenderer:
   m_ObjectHideFlags: 1

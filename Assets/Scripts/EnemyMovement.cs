@@ -136,5 +136,13 @@ public class EnemyMovement : MonoBehaviour
         {
             gameObject.layer = LayerMask.NameToLayer("GoesThroughFloor");
         }
+        if (EnemyRigidBody.velocity.x <= 0)
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); 
+        }
+        else
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
     }
 }

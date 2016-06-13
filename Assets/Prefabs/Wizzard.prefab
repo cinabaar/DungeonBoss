@@ -75,6 +75,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000011980655640
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000013056930498}
+  m_Layer: 9
+  m_Name: tip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000012110459464
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +167,8 @@ GameObject:
   - 114: {fileID: 114000010712464708}
   - 50: {fileID: 50000011900964764}
   - 95: {fileID: 95000010488644256}
+  - 114: {fileID: 114000012526396540}
+  - 114: {fileID: 114000012260685124}
   m_Layer: 9
   m_Name: Wizzard
   m_TagString: Untagged
@@ -232,10 +249,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012907191226}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8, y: 0.8, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_LocalRotation: {x: 0, y: 0, z: 0.00034904052, w: 0.99999994}
+  m_LocalPosition: {x: 0.8, y: 0.06, z: 1}
+  m_LocalScale: {x: 1, y: 3.4, z: 1}
+  m_Children:
+  - {fileID: 4000013056930498}
   m_Father: {fileID: 4000012481556852}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -247,7 +265,7 @@ Transform:
   m_GameObject: {fileID: 1000013285722966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.96, y: -2.66, z: 0.46294}
-  m_LocalScale: {x: 0.29, y: 0.28, z: 0.53706443}
+  m_LocalScale: {x: 0.3, y: 0.28, z: 0.53706443}
   m_Children:
   - {fileID: 4000012354566458}
   - {fileID: 4000011503680054}
@@ -297,6 +315,19 @@ Transform:
   - {fileID: 4000010891824652}
   m_Father: {fileID: 4000012189879784}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4000013056930498
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011980655640}
+  m_LocalRotation: {x: -0, y: -0, z: -0.00034904052, w: 0.99999994}
+  m_LocalPosition: {x: 0.19477153, y: 0.93997777, z: -2}
+  m_LocalScale: {x: 3.333332, y: 1.0504214, z: 1.8619741}
+  m_Children: []
+  m_Father: {fileID: 4000011904165276}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000014287750222
 Transform:
@@ -353,7 +384,7 @@ Animator:
   m_GameObject: {fileID: 1000013285722966}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9bb37c34f53ad4b5eb87311f589fbb8b, type: 2}
+  m_Controller: {fileID: 22100000, guid: acd794b54aa598348a199b00145dd96f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -390,6 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyMovement: {fileID: 114000010352627528}
+  Attack: {fileID: 114000012260685124}
 --- !u!114 &114000011996276392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -404,6 +436,33 @@ MonoBehaviour:
   Strength: 20
   Health: 80
   SpellResistance: 60
+--- !u!114 &114000012260685124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013285722966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39545927c9c944429fb90944f653650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 95000010488644256}
+  WandTip: {fileID: 1000011980655640}
+  WizardAttackPrefab: {fileID: 1000012109872334, guid: 905d46c50b604294fafa9e1979ba2fa1,
+    type: 2}
+--- !u!114 &114000012526396540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013285722966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47b5e3204f08554a8ad66d013f4880a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HpBarTexture: {fileID: 2800000, guid: be562744045167541a5014838db2b09e, type: 3}
 --- !u!212 &212000010216175254
 SpriteRenderer:
   m_ObjectHideFlags: 1
