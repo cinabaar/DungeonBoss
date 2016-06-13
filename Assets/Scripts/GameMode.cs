@@ -14,8 +14,13 @@ public class GameMode : MonoBehaviour {
     private int CurrentNumberOfMages;
     
     private int MaxEnemiesAtTheSameTime;
-
     private bool isLevelStart;
+
+    public float spawnTime = 3f;
+    public Transform[] spawnPoints;
+
+    public GameObject paladinPrefab;
+    public GameObject wizzardPrefab;
 
     void Awake() {
         LevelNumber = 1;
@@ -23,6 +28,7 @@ public class GameMode : MonoBehaviour {
         CurrentNumberOfPaladins = 0;
         CurrentNumberOfMages = 0;
         StartCoroutine(RemoveLabel());
+        InvokeRepeating("SpawnEnemies", spawnTime, spawnTime);
     }
 
     void OnGUI() {
@@ -38,7 +44,6 @@ public class GameMode : MonoBehaviour {
             LevelNumber = LevelNumber + 1;
             startLevel();
         }
-        //TODO: add spawning handling
     }
 
     public void addScoreForKilledPaladin() {
@@ -61,6 +66,15 @@ public class GameMode : MonoBehaviour {
         isLevelStart = true;
         yield return new WaitForSeconds(5);
         isLevelStart = false;
+    }
+
+    private void SpawnEnemies() {
+        if (CurrentNumberOfPaladins < MaxNumberOfPaladinsPerLevel) {
+            GameObject newPaladin = (GameObject)Instantiate(paladinPrefab, this.transform.position, Quaternion.identity);
+        }
+        if (CurrentNumberOfMages < MaxNumberOfMagesPerLevel) {
+            GameObject newWizzard = (GameObject)Instantiate(paladinPrefab, this.transform.position, Quaternion.identity);
+        }
     }
 }
 
