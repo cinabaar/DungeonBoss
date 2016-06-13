@@ -23,20 +23,28 @@ public class GameMode : MonoBehaviour {
     }
 	
 	void Update() {
-       /* MaxNumberOfPaladinsPerLevel = LevelNumber;
-        MaxNumberOfMagesPerLevel = LevelNumber;
+        CurrentNumberOfPaladins = GameObject.FindGameObjectsWithTag("Paladin").Length;
+        CurrentNumberOfMages = GameObject.FindGameObjectsWithTag("Wizzard").Length;;
         if (CurrentNumberOfMages == 0 && CurrentNumberOfPaladins == 0) {
             LevelNumber = LevelNumber + 1;
-        }*/
+            startLevel();
+        }
 
-        //TODO: add spawning
+        //TODO: add spawning handling
 	}
 
     public void addScoreForKilledPaladin() {
         this.PlayerScore = this.PlayerScore + ScorePerPaladin;
+        CurrentNumberOfPaladins = CurrentNumberOfPaladins - 1;
     }
 
     public void addScoreForKilledMage() {
         this.PlayerScore = this.PlayerScore + ScorePerMage;
+        CurrentNumberOfMages = CurrentNumberOfMages - 1;
+    }
+
+    private void startLevel() {
+        MaxNumberOfPaladinsPerLevel = LevelNumber;
+        MaxNumberOfMagesPerLevel = LevelNumber;
     }
 }
