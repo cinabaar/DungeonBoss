@@ -5,11 +5,12 @@ public class HeroStats : MonoBehaviour {
     public float Health = 1000.0f;
     public float FireballDamage = 10.0f;
 
+    private float MaxHealth;
     void Start () {
-	
-	}
+        this.MaxHealth = this.Health;
+    }
 	
 	void Update () {
-	
+        this.gameObject.GetComponent<HealthBar>().updateHealthBar(this.Health, this.MaxHealth);
 	}
 }

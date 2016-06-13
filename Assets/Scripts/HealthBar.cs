@@ -13,14 +13,10 @@ public class HealthBar : MonoBehaviour {
     void OnGUI() {
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
         screenPosition.y = Screen.height - screenPosition.y;
-
         GUI.DrawTexture(new Rect(screenPosition.x - 50, screenPosition.y - 100, lengthOfHpBar, 10), HpBarTexture);
     }
 
-    void Update () {
-        float currentHealth = this.gameObject.GetComponent<EnemyStats>().Health;
-        float maxHealth = this.gameObject.GetComponent<EnemyStats>().getMaxHealth();
-
+    public void updateHealthBar (float currentHealth, float maxHealth) {
         percentOfHP = currentHealth / maxHealth;
         lengthOfHpBar = percentOfHP * 100;
     }

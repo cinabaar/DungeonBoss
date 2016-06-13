@@ -27,7 +27,7 @@ class EnemyStats : MonoBehaviour
         }
     }
 
-    public float getMaxHealth() {
-        return this.MaxHealth;
+    void Update() {
+        this.gameObject.GetComponent<HealthBar>().updateHealthBar(this.Health, this.MaxHealth);
     }
 }
