@@ -79,6 +79,7 @@ public class GameMode : MonoBehaviour {
         CurrentNumberOfMages = 0;
         numberOfKilledPaladinsPerLevel = 0;
         numberOfKilledWizzardsPerLevel = 0;
+        StartCoroutine(RemoveLabel());
     }
 
     IEnumerator RemoveLabel() {
