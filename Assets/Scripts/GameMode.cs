@@ -14,7 +14,7 @@ public class GameMode : MonoBehaviour {
     public int CurrentNumberOfMages;
     
     private bool isLevelStart;
-    private bool shouldStartNewLevel;
+    private bool isPlayerDead;
 
     public float paladinSpawnTime = 3.0f;
     public float wizzardSpawnTime = 4.5f;
@@ -36,7 +36,7 @@ public class GameMode : MonoBehaviour {
         StartCoroutine(RemoveLabel());
         InvokeRepeating("SpawnPaladin", paladinSpawnTime, paladinSpawnTime);
         InvokeRepeating("SpawnWizzard", wizzardSpawnTime, wizzardSpawnTime);
-        shouldStartNewLevel = false;
+        isPlayerDead = false;
         numberOfKilledPaladinsPerLevel = 0;
         numberOfKilledWizzardsPerLevel = 0;
         MaxNumberOfPaladinsPerLevel = 1;
@@ -44,10 +44,15 @@ public class GameMode : MonoBehaviour {
     }
 
     void OnGUI() {
-        if (isLevelStart) {
+        if (isLevelStart && !isPlayerDead) {
             guiStyle.fontSize = 40;
             guiStyle.normal.textColor = Color.red;
             GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, Screen.width, Screen.height), "Level " + LevelNumber, guiStyle);
+        }
+        if (isPlayerDead) {
+            guiStyle.fontSize = 60;
+            guiStyle.normal.textColor = Color.red;
+            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, Screen.width, Screen.height), "YOU DIED!", guiStyle);
         }
     }
 
@@ -100,6 +105,10 @@ public class GameMode : MonoBehaviour {
             GameObject newWizzard = (GameObject)Instantiate(wizzardPrefab, this.transform.position, Quaternion.identity);
             CurrentNumberOfMages = CurrentNumberOfMages + 1;
         }
+    }
+
+    public void playerDied() {
+        this.isPlayerDead = true;
     }
 }
 

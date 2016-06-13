@@ -11,20 +11,15 @@ public class HeroStats : MonoBehaviour {
     void Start () {
         this.MaxHealth = this.Health;
     }
-	
-    void OnGUI() {
-        if (Health <= 0.0f) {
-            guiStyle.fontSize = 60;
-            guiStyle.normal.textColor = Color.red;
-            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, Screen.width, Screen.height), "YOU DIED!", guiStyle);
-        }
-    }
 
 	void Update () {
         if (Health >= 0.0f) {
             this.gameObject.GetComponent<HealthBar>().updateHealthBar(this.Health, this.MaxHealth);
         }
         if (Health <= 0.0f) {
+            GameObject go = GameObject.Find("GameMode");
+            GameMode gm = (GameMode)go.GetComponent(typeof(GameMode));
+            gm.playerDied();
             Destroy(this.gameObject); //DEATH
         }
 	}
