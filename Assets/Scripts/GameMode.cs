@@ -10,23 +10,21 @@ public class GameMode : MonoBehaviour {
 
     private int MaxNumberOfPaladinsPerLevel;
     private int MaxNumberOfWizzardsPerLevel;
-    public int CurrentNumberOfPaladins;
-    public int CurrentNumberOfMages;
-    
+    private int CurrentNumberOfPaladins;
+    private int CurrentNumberOfMages;
+    private int numberOfKilledPaladinsPerLevel;
+    private int numberOfKilledWizzardsPerLevel;
+
     private bool isLevelStart;
     private bool isPlayerDead;
 
     public float paladinSpawnTime = 3.0f;
     public float wizzardSpawnTime = 4.5f;
-    public Transform[] spawnPoints;
 
     public GameObject paladinPrefab;
     public GameObject wizzardPrefab;
 
     private GUIStyle guiStyle = new GUIStyle();
-
-    public int numberOfKilledPaladinsPerLevel;
-    public int numberOfKilledWizzardsPerLevel;
 
     void Awake() {
         LevelNumber = 1;
@@ -53,6 +51,7 @@ public class GameMode : MonoBehaviour {
             guiStyle.fontSize = 60;
             guiStyle.normal.textColor = Color.red;
             GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, Screen.width, Screen.height), "YOU DIED!", guiStyle);
+            Time.timeScale = 0;
         }
     }
 

@@ -15,24 +15,22 @@ class EnemyStats : MonoBehaviour {
     }
 
     public void takeDamage(float amount) {
-
         this.Health = this.Health - calculateSpellDamageAfterFactoringInSpellResistance(amount);
-        checkIfShouldDie();
-
-        GameObject go = GameObject.Find("GameMode");
-        GameMode gm = (GameMode)go.GetComponent(typeof(GameMode));
-        if (gm != null) {
-            if (this.gameObject.name == "Paladin") {
-                gm.addScoreForKilledPaladin();
-            }
-            else if (this.gameObject.name == "Wizzard") {
-                gm.addScoreForKilledMage();
-            }
-        }
+        checkIfShouldDie();    
     }
 
     private void checkIfShouldDie() {
         if (this.Health <= 0) {
+            GameObject go = GameObject.Find("GameMode");
+            GameMode gm = (GameMode)go.GetComponent(typeof(GameMode));
+            if (gm != null) {
+                if (this.gameObject.name == "Paladin") {
+                    gm.addScoreForKilledPaladin();
+                }
+                else if (this.gameObject.name == "Wizzard") {
+                    gm.addScoreForKilledMage();
+                }
+            }
             Destroy(this.gameObject);
         }
     }
