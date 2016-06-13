@@ -11,6 +11,8 @@ public class HeroStats : MonoBehaviour {
     }
 	
 	void Update () {
-        this.gameObject.GetComponent<HealthBar>().updateHealthBar(this.Health, this.MaxHealth);
+        if (Health >= 0.0f) {
+            this.gameObject.GetComponent<HealthBar>().updateHealthBar(this.Health, this.MaxHealth);
+        }
 	}
 }
