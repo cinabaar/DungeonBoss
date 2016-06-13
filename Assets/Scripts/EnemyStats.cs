@@ -18,7 +18,6 @@ class EnemyStats : MonoBehaviour
     public void takeDamage(float amount) {
 
         this.Health = this.Health - calculateSpellDamageAfterFactoringInSpellResistance(amount);
-        Debug.Log("SpellResistance: " + this.SpellResistance);
         checkIfShouldDie();
 
         GameObject go = GameObject.Find("GameMode");

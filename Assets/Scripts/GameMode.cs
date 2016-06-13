@@ -2,25 +2,31 @@
 using System.Collections;
 
 public class GameMode : MonoBehaviour {
-    private int LevelNumber;
-    private int PlayerScore;
+    public int LevelNumber;
+    public int PlayerScore;
 
     public int ScorePerPaladin;
     public int ScorePerMage;
 
     private int MaxNumberOfPaladinsPerLevel;
-    private int MaxNumberOfMagesPerLevel;
-    private int CurrentNumberOfPaladins;
-    private int CurrentNumberOfMages;
+    private int MaxNumberOfWizzardsPerLevel;
+    public int CurrentNumberOfPaladins;
+    public int CurrentNumberOfMages;
     
-    private int MaxEnemiesAtTheSameTime;
     private bool isLevelStart;
+    private bool shouldStartNewLevel;
 
-    public float spawnTime = 3f;
+    public float paladinSpawnTime = 3.0f;
+    public float wizzardSpawnTime = 4.5f;
     public Transform[] spawnPoints;
 
     public GameObject paladinPrefab;
     public GameObject wizzardPrefab;
+
+    private GUIStyle guiStyle = new GUIStyle();
+
+    public int numberOfKilledPaladinsPerLevel;
+    public int numberOfKilledWizzardsPerLevel;
 
     void Awake() {
         LevelNumber = 1;
@@ -28,19 +34,25 @@ public class GameMode : MonoBehaviour {
         CurrentNumberOfPaladins = 0;
         CurrentNumberOfMages = 0;
         StartCoroutine(RemoveLabel());
-        InvokeRepeating("SpawnEnemies", spawnTime, spawnTime);
+        InvokeRepeating("SpawnPaladin", paladinSpawnTime, paladinSpawnTime);
+        InvokeRepeating("SpawnWizzard", wizzardSpawnTime, wizzardSpawnTime);
+        shouldStartNewLevel = false;
+        numberOfKilledPaladinsPerLevel = 0;
+        numberOfKilledWizzardsPerLevel = 0;
     }
 
     void OnGUI() {
         if (isLevelStart) {
-            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, Screen.width, Screen.height), "Level " + LevelNumber);
+            guiStyle.fontSize = 40;
+            guiStyle.normal.textColor = Color.red;
+            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, Screen.width, Screen.height), "Level " + LevelNumber, guiStyle);
         }
     }
 
 	void Update() {
         CurrentNumberOfPaladins = GameObject.FindGameObjectsWithTag("Paladin").Length;
         CurrentNumberOfMages = GameObject.FindGameObjectsWithTag("Wizzard").Length;;
-        if (CurrentNumberOfMages == 0 && CurrentNumberOfPaladins == 0) {
+        if (numberOfKilledPaladinsPerLevel == MaxNumberOfPaladinsPerLevel && numberOfKilledWizzardsPerLevel == MaxNumberOfWizzardsPerLevel) {
             LevelNumber = LevelNumber + 1;
             startLevel();
         }
@@ -49,17 +61,22 @@ public class GameMode : MonoBehaviour {
     public void addScoreForKilledPaladin() {
         this.PlayerScore = this.PlayerScore + ScorePerPaladin;
         CurrentNumberOfPaladins = CurrentNumberOfPaladins - 1;
+        numberOfKilledPaladinsPerLevel = numberOfKilledPaladinsPerLevel + 1;
     }
 
     public void addScoreForKilledMage() {
         this.PlayerScore = this.PlayerScore + ScorePerMage;
         CurrentNumberOfMages = CurrentNumberOfMages - 1;
+        numberOfKilledWizzardsPerLevel = numberOfKilledWizzardsPerLevel + 1;
     }
 
     private void startLevel() {
         MaxNumberOfPaladinsPerLevel = LevelNumber;
-        MaxNumberOfMagesPerLevel = LevelNumber;
-        StartCoroutine(RemoveLabel());
+        MaxNumberOfWizzardsPerLevel = LevelNumber;
+        CurrentNumberOfPaladins = 0;
+        CurrentNumberOfMages = 0;
+        numberOfKilledPaladinsPerLevel = 0;
+        numberOfKilledWizzardsPerLevel = 0;
     }
 
     IEnumerator RemoveLabel() {
@@ -68,12 +85,17 @@ public class GameMode : MonoBehaviour {
         isLevelStart = false;
     }
 
-    private void SpawnEnemies() {
+    private void SpawnPaladin() {
         if (CurrentNumberOfPaladins < MaxNumberOfPaladinsPerLevel) {
             GameObject newPaladin = (GameObject)Instantiate(paladinPrefab, this.transform.position, Quaternion.identity);
+            CurrentNumberOfPaladins = CurrentNumberOfPaladins + 1;
         }
-        if (CurrentNumberOfMages < MaxNumberOfMagesPerLevel) {
-            GameObject newWizzard = (GameObject)Instantiate(paladinPrefab, this.transform.position, Quaternion.identity);
+    }
+
+    private void SpawnWizzard() {
+        if (CurrentNumberOfMages < MaxNumberOfWizzardsPerLevel) {
+            GameObject newWizzard = (GameObject)Instantiate(wizzardPrefab, this.transform.position, Quaternion.identity);
+            CurrentNumberOfMages = CurrentNumberOfMages + 1;
         }
     }
 }
