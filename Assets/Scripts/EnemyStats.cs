@@ -9,6 +9,12 @@ class EnemyStats : MonoBehaviour
     public float Strength;
     public float Health;
     public float SpellResistance;
+    private float MaxHealth;
+
+    void Start() {
+        this.MaxHealth = this.Health;
+    }
+
 
     public void takeDamage(float amount) {
         this.Health = this.Health - (amount - this.SpellResistance);
@@ -19,5 +25,9 @@ class EnemyStats : MonoBehaviour
         if (this.Health <= 0) {
             Destroy(this.gameObject);
         }
+    }
+
+    public float getMaxHealth() {
+        return this.MaxHealth;
     }
 }
