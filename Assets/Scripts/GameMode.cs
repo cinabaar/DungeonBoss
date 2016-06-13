@@ -13,7 +13,7 @@ public class GameMode : MonoBehaviour {
     private int CurrentNumberOfPaladins;
     private int CurrentNumberOfMages;
     
-    public int MaxEnemiesAtTheSameTime;
+    private int MaxEnemiesAtTheSameTime;
 
 	void Awake() {
         LevelNumber = 1;
