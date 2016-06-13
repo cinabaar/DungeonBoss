@@ -454,7 +454,7 @@ MonoBehaviour:
   EnemyCollider: {fileID: 61000012900567838}
   EnemyRigidBody: {fileID: 50000012177882498}
   JumpHeight: 30
-  WalkSpeed: 0
+  WalkSpeed: 8
   wall: {fileID: 0}
   DebugMovement: 0
 --- !u!114 &114000012062718912
