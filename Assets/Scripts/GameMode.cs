@@ -15,13 +15,22 @@ public class GameMode : MonoBehaviour {
     
     private int MaxEnemiesAtTheSameTime;
 
-	void Awake() {
+    private bool isLevelStart;
+
+    void Awake() {
         LevelNumber = 1;
         PlayerScore = 0;
         CurrentNumberOfPaladins = 0;
         CurrentNumberOfMages = 0;
+        StartCoroutine(RemoveLabel());
     }
-	
+
+    void OnGUI() {
+        if (isLevelStart) {
+            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, Screen.width, Screen.height), "Level " + LevelNumber);
+        }
+    }
+
 	void Update() {
         CurrentNumberOfPaladins = GameObject.FindGameObjectsWithTag("Paladin").Length;
         CurrentNumberOfMages = GameObject.FindGameObjectsWithTag("Wizzard").Length;;
@@ -29,9 +38,8 @@ public class GameMode : MonoBehaviour {
             LevelNumber = LevelNumber + 1;
             startLevel();
         }
-
         //TODO: add spawning handling
-	}
+    }
 
     public void addScoreForKilledPaladin() {
         this.PlayerScore = this.PlayerScore + ScorePerPaladin;
@@ -46,5 +54,13 @@ public class GameMode : MonoBehaviour {
     private void startLevel() {
         MaxNumberOfPaladinsPerLevel = LevelNumber;
         MaxNumberOfMagesPerLevel = LevelNumber;
+        StartCoroutine(RemoveLabel());
+    }
+
+    IEnumerator RemoveLabel() {
+        isLevelStart = true;
+        yield return new WaitForSeconds(5);
+        isLevelStart = false;
     }
 }
+
