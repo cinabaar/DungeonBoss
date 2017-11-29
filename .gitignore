@@ -4,6 +4,10 @@
 Temp/
 Library/
 
+*.exe
+*.dll
+
+
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #
